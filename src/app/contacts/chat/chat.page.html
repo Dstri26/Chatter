@@ -25,6 +25,8 @@
     </ion-card-content>
   </ion-card>
   <ion-item class="bottom">
+    <ion-input [(ngModel)]="user" id="btn-input" type="text" placeholder="Type your name here"></ion-input>
+    <ion-input [(ngModel)]="myphoneId" id="btn-input" type="text" placeholder="Type your mobile number here"></ion-input>
     <ion-input [(ngModel)]="msg" id="btn-input" type="text" placeholder="Type your message here..."></ion-input>
     <ion-button  color="light" (click)="sendMessage()" >
       <ion-icon name="send"></ion-icon>
