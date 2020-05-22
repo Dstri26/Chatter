@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Contacts</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon button name="ellipsis-vertical-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list >
+    <ion-item button *ngFor="let contact of contacts" routerLink='chat/{{contact.phoneId}}'>
+      <ion-avatar>
+        <ion-img [src]="contact.imgUrl"></ion-img>
+      </ion-avatar>
+      <ion-text class="ion-padding">
+          {{contact.name}}
+      </ion-text>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

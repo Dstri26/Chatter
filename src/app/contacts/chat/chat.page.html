@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="contact" slot="start"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{loadedContact.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="tertiary">
+  <ion-card class="right">
+    <ion-card-content>
+      my message
+      <div class="ion-text-end">
+        <span> 10.35 </span>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngFor="let x of msgList">
+    <ion-card-content>
+      {{x.msg}}
+      <div class="ion-text-end">
+        <span>  {{x.date | date:'shortTime'}}</span>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-item class="bottom">
+    <ion-input [(ngModel)]="msg" id="btn-input" type="text" placeholder="Type your message here..."></ion-input>
+    <ion-button  color="light" (click)="sendMessage()" >
+      <ion-icon name="send"></ion-icon>
+    </ion-button>
+  </ion-item>
+
+</ion-content>
